@@ -1,0 +1,9 @@
+{
+  "scope": "synthetic pipeline validation only",
+  "samples": 32,
+  "synthetic_reference_samples": 24,
+  "synthetic_anomaly_samples": 8,
+  "tab_detection_rate": 1.0,
+  "median_rotation_error_degrees": 0.02,
+  "top_8_anomaly_precision": 1.0
+}
