@@ -9,7 +9,6 @@ from pathlib import Path
 
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/battery-matplotlib")
 
-import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.ensemble import IsolationForest
@@ -17,7 +16,6 @@ from sklearn.preprocessing import StandardScaler
 
 from battery_pipeline import (
     FEATURE_NAMES,
-    align_tab_to_top,
     build_multiview_input,
     extract_geometry_features,
     generate_synthetic_cell,
@@ -170,7 +168,9 @@ def main() -> None:
     save_score_figure(scores, labels)
     target_index = int(ranked[0])
     target = images[target_index]
-    score_function = lambda image: anomaly_score(model, scaler, image)
+    def score_function(image: np.ndarray) -> float:
+        return anomaly_score(model, scaler, image)
+
     heat = occlusion_sensitivity(target, score_function, patch_size=64, stride=32)
     save_occlusion_figure(target, heat)
 

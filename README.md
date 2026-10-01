@@ -88,7 +88,15 @@ Before making manufacturing claims, the next evaluation stage should use cell-le
 - Occlusion maps explain score sensitivity; they do not prove causal defect localization.
 - Thresholds and Hough parameters require validation on each scanner and acquisition protocol.
 
+## Engineering quality
+
+- image processing, feature extraction, model fitting, explanation, and presentation remain separate;
+- no resize operation is used on source geometry;
+- Ruff, bytecode compilation, and 11 tests run in GitHub Actions;
+- numeric tests and rendered figures are both reviewed after pipeline changes.
+
+See [ENGINEERING.md](ENGINEERING.md) for the architecture map, verification contract, safe-change checklist, and limitations.
+
 ## Author
 
 **Manisha Pandala** — M.S. Data Science student at Arizona State University and AI/ML enthusiast.
-
