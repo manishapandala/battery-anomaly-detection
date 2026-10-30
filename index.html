@@ -150,6 +150,8 @@
       background: rgba(245, 158, 139, 0.08);
     }
     .callout strong { color: var(--coral); }
+    .output-links { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.25rem; }
+    .output-links a { color: var(--teal); font-weight: 800; }
 
     footer { padding: 4rem 0; }
     footer p { max-width: 760px; color: var(--muted); }
@@ -264,6 +266,7 @@
               <div class="feature"><strong>Radius fraction</strong><span>can scale check</span></div>
             </div>
             <p class="callout"><strong>No hidden benchmark:</strong> every public number on this page can be regenerated with <code>python run_demo.py</code>.</p>
+            <div class="output-links"><a href="demo_summary.json" download>Download validation summary →</a><a href="demo_results.csv" download>Download cell-level scores →</a></div>
           </div>
         </div>
       </div>
